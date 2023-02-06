@@ -6,9 +6,11 @@ import * as Yup from 'yup';
 
 const Register = () => {
   const [formInputs] = useState({
+    name: '',
     email: '',
     password: '',
-    passwordRepeat: ''
+    passwordRepeat: '',
+    avatar: ''
   });
   const [invalidUsername, setInvalidUsername] = useState(false);
 
@@ -61,6 +63,12 @@ const Register = () => {
           {({ errors, touched }) => (
             <Form>
               <h1>Register</h1>
+              <label>Name:
+                <Field 
+                  name="name"
+                  type="text"
+                />
+              </label>
               <label>
                 Email:
                 <Field
@@ -83,6 +91,15 @@ const Register = () => {
                 {errors.passwordRepeat && touched.passwordRepeat ? (
                   <span>{errors.passwordRepeat}</span>
                 ) : null}
+              </label>
+              <label>
+                User picture:
+                <Field
+                  name="avatar"
+                  type="url" />
+                {/* {errors.avatar && touched.avatar ? (
+                  <div>{errors.avatar}</div>
+                ) : null} */}
               </label>
               {invalidUsername ? (
                 <span>Email is already taken!</span>

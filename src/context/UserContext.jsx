@@ -1,87 +1,41 @@
-import UserContext from "../../context/UserContext";
-import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Formik, Form, Field } from 'formik';
-import * as Yup from 'yup';
+import { createContext, useState, useEffect } from "react";
 
-const LogIn = () => {
-  const [failedLogIn, setFailedLogIn] = useState(false);
-  const navigate = useNavigate();
-  const { users, setLoggedInUser } = useContext(UserContext);
+const UserContext = createContext();
 
-  const handleSubmit = async (values, setSubmitting) => {
-    const loggedInUser = users.find(user => user.email === values.email && user.password === values.password);
-    if (loggedInUser) {
-      setLoggedInUser(loggedInUser);
-      navigate('/')
-    } else {
-      setFailedLogIn(true);
-    }
-    setSubmitting(false);
+const UserProvider = ({ children }) => {
+
+  const [loggedInUser, setLoggedInUser] = useState();
+
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:5000/users')
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        setUsers(data);
+      }).catch(error => {
+        console.error('Error:', error);
+      });
+  }, []);
+
+  const addNewUser = (newUser) => {
+    setUsers([...users, newUser]);
   }
 
-  const validationSchema = Yup.object().shape({
-    email: Yup.string()
-      .required('Username is required'),
-    password: Yup.string()
-      .required('Password is required')
-  });
-
   return (
-    <>
-      <div className="logIn">
-        <Formik
-          initialValues={{
-            email: '',
-            password: ''
-          }}
-          validationSchema={validationSchema}
-          onSubmit={(values, { setSubmitting }) => handleSubmit(values, setSubmitting)}       >
-
-          {({ errors, touched, values, setValues, isSubmitting }) => (
-            <Form>
-              <div>
-                <h1>Log In</h1>
-                <label>Email:
-                  <Field
-                    name='email'
-                    value={values.email}
-                    onChange={(e) => setValues({ ...values, email: e.target.value })}
-                  />
-                  {
-                    errors.email && touched.email ?
-                      <span>{errors.email}</span>
-                      : null
-                  }
-                </label>
-              </div>
-              <div>
-                <label>Password:
-                  <Field
-                    name='password'
-                    type='password'
-                    value={values.password}
-                    onChange={(e) => setValues({ ...values, password: e.target.value })}
-                  />
-                  {
-                    errors.password && touched.password ?
-                      <span>{errors.password}</span>
-                      : null
-                  }
-                </label>
-              </div>
-              <button type="submit" disabled={isSubmitting}>
-                Log In
-              </button>
-              {
-                failedLogIn && <span>Wrong log in info</span>
-              }
-            </Form>
-          )}
-        </Formik>
-      </div>
-    </>
+    <UserContext.Provider
+      value={{
+        users,
+        addNewUser,
+        loggedInUser,
+        setLoggedInUser
+      }}
+    >
+      {children}
+    </UserContext.Provider>
   );
 }
 
-export default LogIn;
+export { UserProvider };
+export default UserContext;
