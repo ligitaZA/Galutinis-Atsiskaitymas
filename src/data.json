@@ -2,10 +2,19 @@
   "users": [
     {
       "id": 1,
-      "name": "json-server",
-      "email": "typicode",
-      "password": "typicode",
-      "avatar":""
+      "userName": "Ligita",
+      "email": "ligitazaicevaite@gmail.com",
+      "password": "123456789",
+      "avatar": ""
+    },
+    {
+      "userName": "labas",
+      "password": "123456789",
+      "passwordRepeat": "123456789",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/5087/5087579.png",
+      "id": 1675691867162,
+      "level": "user",
+      "isBanned": false
     }
   ]
 }

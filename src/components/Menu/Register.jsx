@@ -6,8 +6,7 @@ import * as Yup from 'yup';
 
 const Register = () => {
   const [formInputs] = useState({
-    name: '',
-    email: '',
+    userName: '',
     password: '',
     passwordRepeat: '',
     avatar: ''
@@ -18,12 +17,14 @@ const Register = () => {
   const navigate = useNavigate();
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     try {
-      if (users.find(user => user.email === values.email)) {
+      if (users.find(user => user.userName === values.userName)) {
         setInvalidUsername(true);
       } else {
         let newUser = {
           ...values,
-          id: Date.now()
+          id: Date.now(),
+          level: 'user',
+          isBanned: false
         };
         const response = await fetch('http://localhost:5000/users', {
           method: 'POST',
@@ -45,16 +46,22 @@ const Register = () => {
     }
   };
   const validationSchema = Yup.object({
+    userName: Yup.string()
+      .required('User name is required'),
     password: Yup.string()
       .min(8, 'Password must be at least 8 symbols length.')
       .required('Password is required'),
     passwordRepeat: Yup.string()
       .oneOf([Yup.ref('password'), null], 'Passwords must match')
       .required('Password repeat is required'),
-  });
+    avatar: Yup.string()
+      .url('Must be a valid url')
+  })
   return (
     <>
-      <div className="registrationForm">
+      <div className="register">
+
+        {invalidUsername && <div className="error-message">This username is already taken, please choose a different one</div>}
         <Formik
           validationSchema={validationSchema}
           onSubmit={(values, { setSubmitting, resetForm }) => handleSubmit(values, { setSubmitting, resetForm })}
@@ -62,26 +69,24 @@ const Register = () => {
         >
           {({ errors, touched }) => (
             <Form>
-              <h1>Register</h1>
-              <label>Name:
-                <Field 
-                  name="name"
-                  type="text"
-                />
-              </label>
               <label>
-                Email:
+                User name:
                 <Field
-                  name="email"
+                  name="userName"
                   type="text" />
+                {errors.userName && touched.userName ? (
+                  <div>{errors.userName}</div>
+                ) : null}
+
               </label>
               <label>
                 Password:
                 <Field
                   name="password"
-                  type="password" />{errors.password && touched.password ? (
-                    <span>{errors.password}</span>
-                  ) : null}
+                  type="password" />
+                {errors.password && touched.password ? (
+                  <div>{errors.password}</div>
+                ) : null}
               </label>
               <label>
                 Repeat Password:
@@ -89,7 +94,7 @@ const Register = () => {
                   name="passwordRepeat"
                   type="password" />
                 {errors.passwordRepeat && touched.passwordRepeat ? (
-                  <span>{errors.passwordRepeat}</span>
+                  <div>{errors.passwordRepeat}</div>
                 ) : null}
               </label>
               <label>
@@ -97,13 +102,10 @@ const Register = () => {
                 <Field
                   name="avatar"
                   type="url" />
-                {/* {errors.avatar && touched.avatar ? (
+                {errors.avatar && touched.avatar ? (
                   <div>{errors.avatar}</div>
-                ) : null} */}
+                ) : null}
               </label>
-              {invalidUsername ? (
-                <span>Email is already taken!</span>
-              ) : null}
               <button type="submit">Register</button>
             </Form>
           )}

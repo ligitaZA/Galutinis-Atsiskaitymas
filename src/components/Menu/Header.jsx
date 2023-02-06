@@ -11,9 +11,6 @@ const Header = () => {
         loggedInUser ?
           <User /> :
           <div className="loginRegister">
-            <Link to="/">
-              <div className="logo"></div>
-            </Link>
             <div className='formsBtns'>
               <Link to='/login' className='login'>Login</Link>
               <Link to='/register' className='register'>Register</Link>
