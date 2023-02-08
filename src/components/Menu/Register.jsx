@@ -37,7 +37,7 @@ const Register = () => {
         console.log(data);
         addNewUser(newUser);
         setLoggedInUser(newUser);
-        navigate('/');
+        navigate('/questions');
         setSubmitting(false);
         resetForm();
       }

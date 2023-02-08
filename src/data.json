@@ -5,7 +5,7 @@
       "userName": "Ligita",
       "email": "ligitazaicevaite@gmail.com",
       "password": "123456789",
-      "avatar": ""
+      "avatar": "https://cdn-icons-png.flaticon.com/512/5087/5087579.png"
     },
     {
       "userName": "labas",
@@ -13,9 +13,71 @@
       "passwordRepeat": "123456789",
       "avatar": "https://cdn-icons-png.flaticon.com/512/5087/5087579.png",
       "id": 1675691867162,
-      "level": "user",
-      "isBanned": false
+      "level": "user"
     }
   ],
-  "messages": []
+  "questions": [
+    {
+      "title": "Take a Break girl",
+      "question": "redaguotas",
+      "id": 1675773420965,
+      "isEdited": true,
+      "userId": 1675691867162
+    },
+    {
+      "title": "Take a Brea",
+      "question": "Laba",
+      "id": 1675841107527,
+      "userId": 1
+    },
+    {
+      "title": "Take a Brea",
+      "question": "Lab",
+      "id": 1675841167749,
+      "userId": 1
+    },
+    {
+      "title": "",
+      "question": "",
+      "isLiked": "",
+      "isEdited": false,
+      "id": 1675843490462,
+      "userId": 1
+    },
+    {
+      "title": "",
+      "question": "",
+      "id": 1675843495702,
+      "userId": 1
+    },
+    {
+      "title": "labas",
+      "question": "Laba",
+      "id": 1675843523714,
+      "userId": 1
+    },
+    {
+      "title": "Crank Up the Music",
+      "question": "paviko",
+      "isLiked": "",
+      "isEdited": false,
+      "id": 1675843556086,
+      "userId": 1
+    },
+    {
+      "title": "labukas",
+      "question": "redaguotas",
+      "id": 1675844134741,
+      "isEdited": true,
+      "userId": 1
+    },
+    {
+      "title": "labas",
+      "question": "labas",
+      "isLiked": "",
+      "isEdited": false,
+      "id": 1675844514543,
+      "userId": 1675691867162
+    }
+  ]
 }
