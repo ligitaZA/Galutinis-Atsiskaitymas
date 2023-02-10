@@ -84,6 +84,16 @@
       "likes": 0,
       "dislikes": 0,
       "sortByTime": "2/10/2023, 9:03:54 PM"
+    },
+    {
+      "title": "a",
+      "question": "a",
+      "isEdited": false,
+      "id": 1676058597079,
+      "userId": 1,
+      "likes": 0,
+      "dislikes": 0,
+      "sortByTime": "2/10/2023, 9:49:57 PM"
     }
   ],
   "answers": [
@@ -200,6 +210,15 @@
       "userId": 1,
       "content": "aa",
       "id": 1676056233475,
+      "edited": false,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "postId": "1675949611755",
+      "userId": 1,
+      "content": "aaa",
+      "id": 1676058601897,
       "edited": false,
       "likes": 0,
       "dislikes": 0
