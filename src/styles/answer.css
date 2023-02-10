@@ -1,0 +1,18 @@
+.answer{
+  border: 1px solid black;
+
+}
+
+
+.answerUser {
+  display: flex;
+  align-items: center;
+}
+.answerUser img {
+  height: 30px;
+}
+.likeddislikedAnswers {
+  display: flex;
+  gap: 20px;
+
+}

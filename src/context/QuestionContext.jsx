@@ -4,7 +4,7 @@ import { createContext } from "react";
 
 const QuestionContext = createContext();
 
-const QuestionProvider = ({children}) => {
+const QuestionProvider = ({ children }) => {
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
@@ -21,33 +21,26 @@ const QuestionProvider = ({children}) => {
     fetchMessages();
   }, []);
 
+
   const addQuestion = async (question) => {
-    try {
       const res = await fetch('http://localhost:5000/questions', {
         method: 'POST',
-        headers: {'Content-Type' : 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(question)
       });
       const data = await res.json();
       setQuestions([...questions, data]);
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
+    } 
 
   const deleteQuestion = async (id) => {
     console.log("deleteQuestion called with id: ", id);
-    try {
       await fetch(`http://localhost:5000/questions/${id}`, {
-        method: 'DELETE', 
+        method: 'DELETE',
       });
       setQuestions(questions.filter(question => question.id !== id))
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  }
+    } 
+
   const editQuestion = async (id, updatedQuestion) => {
-    try {
       const res = await fetch(`http://localhost:5000/questions/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -56,20 +49,43 @@ const QuestionProvider = ({children}) => {
       const data = await res.json();
       setQuestions(
         questions.map((question) =>
-          question.id === id ? { ...question, ...data } : question
+          question.id.toString() === id ? { ...question, ...data } : question
         )
       );
-    } catch (error) {
-      console.error('Error:', error);
+    } 
+
+    const likeQuestion = async (id) => {
+      const question = questions.find(question => question.id === id);
+      const updatedQuestion = { ...question, likes: question.likes + 1 };
+      await fetch(`http://localhost:5000/questions/${id}`, {
+        method: 'PATCH',
+        body: JSON.stringify(updatedQuestion),
+        headers: { 'Content-Type': 'application/json' }
+      });
+      setQuestions(questions.map(question => question.id === id ? { ...question, likes: question.likes + 1 } : question));
     }
-  };
+  
+    const dislikeQuestion = async (id) => {
+      const question = questions.find(question => question.id === id);
+      const updatedQuestion = { ...question, dislikes: question.dislikes + 1 };
+      await fetch(`http://localhost:5000/questions/${id}`, {
+        method: 'PATCH',
+        body: JSON.stringify(updatedQuestion),
+        headers: { 'Content-Type': 'application/json' }
+      });
+      setQuestions(questions.map(question => question.id === id ? { ...question, dislikes: question.dislikes + 1 } : question));
+    }
+  
+
   return (
     <QuestionContext.Provider
       value={{
         questions,
         addQuestion,
         deleteQuestion,
-        editQuestion
+        editQuestion,
+        likeQuestion,
+        dislikeQuestion,
       }}
     >
       {children}

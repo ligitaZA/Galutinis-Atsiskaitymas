@@ -1,7 +1,3 @@
-.user {
-  height: 100px;
-
-}
-.user img {
-  height: 40px;
-}
+@import url('./styles/header.css');
+@import url('./styles/questions.css');
+@import url('./styles/answer.css');

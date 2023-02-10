@@ -13,7 +13,7 @@ const LogIn = () => {
     const loggedInUser = users.find(user => user.userName === values.userName && user.password === values.password);
       if (loggedInUser) {
         setLoggedInUser(loggedInUser);
-        navigation('/questions')
+        navigation('/')
       } else {
         setFailedLogIn(true);
       }

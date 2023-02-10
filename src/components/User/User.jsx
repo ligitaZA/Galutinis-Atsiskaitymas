@@ -2,7 +2,7 @@ import UserContext from "../../context/UserContext"; import { useContext } from 
 import { Link, useNavigate } from 'react-router-dom';
 
 const User = () => {
-  const { setLoggedInUser } = useContext(UserContext);
+  const { loggedInUser, setLoggedInUser } = useContext(UserContext);
 
   const navigation = useNavigate();
 
@@ -18,7 +18,18 @@ const User = () => {
         <Link to="/">HOME
         </Link>
       </div>
+        <Link to="/addQuestions">Add New Post</Link>
+        <div className="userPart">
+          <img
+            src={loggedInUser.avatar}
+            alt="user avatar" 
+            className="userAvatar"
+          />
+          <span>{loggedInUser.userName}</span>
+       
         <button className="logOut" onClick={() => logOutUser()}>Log Out</button>
+        </div>
+        
       </div>
   );
 }

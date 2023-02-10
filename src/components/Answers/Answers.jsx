@@ -1,51 +1,62 @@
-import { useContext, useState } from "react";
-import AnswerContext from "../../context/AnswerContext";
-import QuestionContext from "../../context/QuestionContext";
-import UserContext from "../../context/UserContext";
+// // import { useContext } from "react";
+// // import UserContext from "../../context/UserContext";
+// // import QuestionContext from "../../context/QuestionContext";
+// // import Answer from "./Answer";
 
-const Answers = () => {
-  const [answerInputs, setAnswerInputs] = useState({
-    answer: ""
-  })
-  const {questions} = useContext(QuestionContext);
-  const {users, loggedInUser} =useContext(UserContext);
-  const {answers, addAnswer} = useContext(AnswerContext)
-    
-  
-  
-  const handleAnswer = (e) => {
-    e.preventDefault();
-    const newAnswer={
-      answer: answerInputs.answer,
-      id: Date.now(),
-      userId: loggedInUser ? loggedInUser.id : null,
-    };
-    addAnswer(newAnswer);
-    setAnswerInputs({ answer: "" });
-  };
-    return (
-      <div className="user">
-          <img
-            className="avatar"
-            src={users.avatar}
-            alt="user avatar" />
-        {users && <span>{users.userName}</span>}
+// // const Answers = () => {
+// //   const { questions, id } = useContext(QuestionContext);
+// //   const { users } = useContext(UserContext);
 
-        <div className="question-text">{questions.title}</div>
-        <div className="question-text">{questions.question}</div>
-        {loggedInUser && (
-          <form onSubmit={handleAnswer}>
-            <input 
-            type="text"
-            value={answerInputs.answer}
-            onChange={e => setAnswerInputs({ answer: e.target.value })} />
-          <button type="submit" >Submit Answer</button>
+// //   const selectedQuestion = questions.find(question => question.id.toString() === id);
+// //   const questionAnswers = selectedQuestion.answers;
   
-          
-          </form>
-        )}
-      </div>
-    );
-}
+// //   return (
+// //     <>
+// //       <div>
+// //         <h2>{selectedQuestion.title}</h2>
+// //         <p>{selectedQuestion.question}</p>
+// //       </div>
+// //       {questionAnswers.map(answer => {
+// //         const answerOwner = users.find(user => user.id === answer.userId);
+// //         return (
+// //           <Answer
+// //             key={answer.id}
+// //             data={answer}
+// //             owner={answerOwner}
+// //           />
+// //         );
+// //       })}
+// //     </>
+// //   );
+// // };
+
+// // export default Answers;
+// import AnswerContext from "../../context/AnswerContext";
+// import { useContext } from "react";
+// import Answer from "./Answer";
+
+// const Answers = () => {
+
+//   const { answers } = useContext(AnswerContext);
  
-export default Answers;
+
+//   return (
+//     <>
+    
+//     <div className="AnswersCardsWrapper">
+//         {answers ?
+//           answers.map((answer, index) => 
+//             <Answer 
+//               key={answer.id || index}
+//               data={answer}
+//             />  
+//           )
+//           :
+//           <p>Loading...</p>
+//         }
+//       </div>
+//     </>
+//   );
+// }
+ 
+// export default Answers;

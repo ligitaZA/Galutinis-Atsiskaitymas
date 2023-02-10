@@ -18,66 +18,118 @@
   ],
   "questions": [
     {
-      "title": "Take a Break girl",
-      "question": "redaguotas",
-      "id": 1675773420965,
+      "title": "kitas vartotojasaaa",
+      "question": "Labas",
+      "userId": 1675691867162,
+      "id": 1675949611755,
+      "dislikes": -11,
+      "likes": 34
+    },
+    {
+      "title": "Take a Breakz",
+      "question": "gkgk",
+      "userId": 1,
       "isEdited": true,
-      "userId": 1675691867162
+      "id": 1676021304920
     },
     {
-      "title": "Take a Brea",
-      "question": "Laba",
-      "id": 1675841107527,
-      "userId": 1
-    },
-    {
-      "title": "Take a Brea",
-      "question": "Lab",
-      "id": 1675841167749,
-      "userId": 1
-    },
-    {
-      "title": "",
+      "title": "Take a Break",
       "question": "",
-      "isLiked": "",
-      "isEdited": false,
-      "id": 1675843490462,
-      "userId": 1
-    },
-    {
-      "title": "",
-      "question": "",
-      "id": 1675843495702,
-      "userId": 1
-    },
-    {
-      "title": "labas",
-      "question": "Laba",
-      "id": 1675843523714,
-      "userId": 1
-    },
-    {
-      "title": "Crank Up the Music",
-      "question": "paviko",
-      "isLiked": "",
-      "isEdited": false,
-      "id": 1675843556086,
-      "userId": 1
-    },
-    {
-      "title": "labukas",
-      "question": "redaguotas",
-      "id": 1675844134741,
+      "userId": 1,
       "isEdited": true,
-      "userId": 1
+      "id": 1676029753467
+    }
+  ],
+  "answers": [
+    {
+      "postId": "1675951912164",
+      "userId": 1,
+      "content": "v",
+      "id": 1675964325466,
+      "edited": false,
+      "likes": 0,
+      "dislikes": 2
     },
     {
-      "title": "labas",
-      "question": "labas",
-      "isLiked": "",
-      "isEdited": false,
-      "id": 1675844514543,
-      "userId": 1675691867162
+      "postId": "1675951912164",
+      "userId": 1,
+      "content": "vvv",
+      "id": 1675964738610,
+      "edited": false,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "postId": "1675965922047",
+      "userId": 1,
+      "content": "hnmvbn ",
+      "id": 1675965928349,
+      "edited": false,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "postId": "1675952393921",
+      "userId": 1,
+      "content": "labas",
+      "id": 1675967048089,
+      "edited": false,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "postId": "1675955891867",
+      "userId": 1,
+      "content": "zzz",
+      "id": 1675967929124,
+      "edited": false,
+      "likes": 2,
+      "dislikes": 2
+    },
+    {
+      "postId": "1676017235591",
+      "userId": 1,
+      "content": "aaaaaaa",
+      "id": 1676017243255,
+      "edited": false,
+      "likes": 1,
+      "dislikes": 1
+    },
+    {
+      "id": 1676020436265
+    },
+    {
+      "id": 1676021677660
+    },
+    {
+      "id": 1676021788192
+    },
+    {
+      "postId": "1676029753467",
+      "userId": 1,
+      "content": "aaa",
+      "id": 1676029757797,
+      "edited": false,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "postId": "1676021304920",
+      "userId": 1,
+      "content": "labas",
+      "id": 1676033586037,
+      "edited": false,
+      "likes": 1,
+      "dislikes": 1
+    },
+    {
+      "postId": "1675949611755",
+      "userId": 1,
+      "content": "labas",
+      "id": 1676034459991,
+      "edited": false,
+      "likes": 1,
+      "dislikes": 1
     }
   ]
 }

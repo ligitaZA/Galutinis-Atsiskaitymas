@@ -1,0 +1,148 @@
+.headerUser {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.headerUser img {
+  height: 40px;
+}
+.headerUser .userPart {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.formsBtns {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+
+}
+.loginRegister a {
+  text-decoration: none;
+  margin: 0;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 20px;
+  background: #4b7d94b2;
+  line-height: 1em;
+  box-sizing: border-box;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.26);
+  color: #fff;
+  cursor: pointer;
+}
+
+
+.logIn {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: auto;
+  margin: 50px auto;
+  padding: 20px;
+  justify-content: space-between;
+  background-color: rgb(58, 107, 110);
+  border-radius: 5px 5px 0 0;
+  border-style: none;
+  box-shadow: rgba(224, 226, 226, 0.616) 0 3px 5px -1px, rgba(226, 221, 221, 0.14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #000000;
+}
+
+.logIn form {
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: #dfdfebbb;
+}
+
+.logIn form input {
+  border: 0;
+  font-size: 15px;
+  border-radius: 4px;
+  color: #000000;
+  height: 30px;
+  width: 300px;
+  background-color: rgb(129, 119, 119);
+}
+
+.logIn form button {
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 24px 0 12px;
+  padding: 10px 30px;
+  background: #4be6864b;
+  line-height: 1em;
+  box-sizing: border-box;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.26);
+  color: #fff;
+  cursor: pointer;
+}
+
+.logIn form label {
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin: 30px auto;
+  padding: 20px;
+  justify-content: space-between;
+  background-color: rgb(58, 107, 110);
+  border-radius: 5px 5px 0 0;
+  border-style: none;
+  box-shadow: rgba(187, 183, 183, 0.2) 0 3px 5px -1px, rgba(226, 221, 221, 0.14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #000000;
+}
+
+.register form {
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: #626268bb;
+}
+
+.register form input {
+  border: 0;
+  font-size: 15px;
+  border-radius: 4px;
+  color: #000000;
+  height: 30px;
+  width: 300px;
+  background-color: rgb(144, 155, 147);
+}
+
+.register form button {
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 24px 0 12px;
+  padding: 10px 30px;
+  background: #5bd8a891;
+  line-height: 1em;
+  box-sizing: border-box;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.26);
+  color: #fff;
+  cursor: pointer;
+}
+
+.register form label {
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
