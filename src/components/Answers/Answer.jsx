@@ -11,20 +11,22 @@ const Answer = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [editedAnswer, setEditedAnswer] = useState('');
 
-  const [questionAnswers, setPostAnswers] = useState([]);
+  const [questionAnswers, setQuestionAnswers] = useState([]);
   const { users, loggedInUser } = useContext(UserContext);
   const { answers, setAnswers, addAnswer, deleteAnswer, likeAnswer, dislikeAnswer, editAnswer } = useContext(AnswerContext);
+  const [, setHasAnswer] = useState(false);
   const { questions } = useContext(QuestionContext)
 
   const selectedQuestion = questions.find(question => question.id.toString() === id);
 
   useEffect(() => {
     const questionAnswers = answers.filter(answer => answer.postId === id);
-    setPostAnswers(questionAnswers);
+    setQuestionAnswers(questionAnswers);
   }, [answers, id]);
 
   useEffect(() => {
-    setPostAnswers(answers.filter(answer => answer.postId === id));
+    setQuestionAnswers(answers.filter(answer => answer.postId === id));
+    setHasAnswer(questionAnswers.length > 0);
   }, [answers, id]);
 
   const handleSubmit = (e) => {
