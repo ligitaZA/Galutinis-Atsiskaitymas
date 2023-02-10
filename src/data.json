@@ -22,8 +22,8 @@
       "question": "Labas",
       "userId": 1675691867162,
       "id": 1675949611755,
-      "dislikes": -11,
-      "likes": 34
+      "dislikes": -10,
+      "likes": 35
     },
     {
       "title": "Take a Breakz",
@@ -114,15 +114,6 @@
       "dislikes": 1
     },
     {
-      "id": 1676046304511,
-      "postId": "1675949611755",
-      "userId": 1,
-      "edited": true,
-      "content": "",
-      "likes": 0,
-      "dislikes": 0
-    },
-    {
       "id": 1676046523995,
       "postId": "1675949611755",
       "userId": 1,
@@ -130,15 +121,6 @@
       "content": "xdfgdfg",
       "likes": 1,
       "dislikes": 1
-    },
-    {
-      "id": 1676046531729,
-      "postId": "1675949611755",
-      "userId": 1,
-      "edited": true,
-      "content": "xxxsss",
-      "likes": 0,
-      "dislikes": 3
     },
     {
       "id": 1676049666724,
