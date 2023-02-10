@@ -2,19 +2,12 @@ import { useContext, useState } from "react";
 import QuestionContext from "../../context/QuestionContext";
 import UserContext from "../../context/UserContext";
 import { Link } from "react-router-dom";
-import AnswerContext from "../../context/AnswerContext";
 
-const Question = ({ data, questionContent }) => {
-  const { answers } = useContext(AnswerContext);
+const Question = ({ data }) => {
   const { users, loggedInUser } = useContext(UserContext);
   const { deleteQuestion, likeQuestion, dislikeQuestion } = useContext(QuestionContext);
    const [, setSelectedQuestion] = useState(null);
-
   const questionOwner = users.find(user => user.id === data.userId) || {};
-
- 
-  const questionAnswers = answers.filter(answer => answer.postId === data.id);
-  const hasAnswer = questionAnswers.length > 0;
 
   const handleQuestionSelection = (question, title) => {
     setSelectedQuestion({
@@ -22,14 +15,6 @@ const Question = ({ data, questionContent }) => {
       title
     });
   };
-
-  if (questionContent === "answered" && !hasAnswer) {
-    return null;
-  }
-
-  if (questionContent === "unanswered" && hasAnswer) {
-    return null;
-  }
 
   return (
     <>
@@ -89,12 +74,13 @@ const Question = ({ data, questionContent }) => {
 
 
           <div className="answers">
-
+          
             <Link to={`/questions/${data.id}`
             }>
               <button onClick={() => handleQuestionSelection(data.question, data.title)}>
                 Answers
               </button>
+             
             </Link>
           </div>
         </div>
