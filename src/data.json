@@ -26,18 +26,74 @@
       "likes": 35
     },
     {
-      "title": "Take a Breakz",
-      "question": "gkgk",
+      "title": "dsfse",
+      "question": "sdff",
+      "isEdited": false,
+      "id": 1676051869006,
       "userId": 1,
-      "isEdited": true,
-      "id": 1676021304920
+      "likes": 3,
+      "dislikes": 2,
+      "sortByTime": "2/10/2023, 7:57:49 PM"
     },
     {
-      "title": "Take a Break",
-      "question": "",
+      "title": "aaa",
+      "question": "aaa",
+      "isEdited": false,
+      "id": 1676052568327,
       "userId": 1,
-      "isEdited": true,
-      "id": 1676029753467
+      "likes": 1,
+      "dislikes": 1,
+      "sortByTime": "2/10/2023, 8:09:28 PM"
+    },
+    {
+      "title": "aaa",
+      "question": "aaa",
+      "isEdited": false,
+      "id": 1676053566228,
+      "userId": 1,
+      "likes": 0,
+      "dislikes": 0,
+      "sortByTime": "2/10/2023, 8:26:06 PM"
+    },
+    {
+      "title": "q",
+      "question": "q",
+      "isEdited": false,
+      "id": 1676054816964,
+      "userId": 1,
+      "likes": 0,
+      "dislikes": 0,
+      "sortByTime": "2/10/2023, 8:46:56 PM"
+    },
+    {
+      "title": "vsv",
+      "question": "sdsd",
+      "isEdited": false,
+      "id": 1676055514118,
+      "userId": 1,
+      "likes": 0,
+      "dislikes": 0,
+      "sortByTime": "2/10/2023, 8:58:34 PM"
+    },
+    {
+      "title": "a",
+      "question": "a",
+      "isEdited": false,
+      "id": 1676055834256,
+      "userId": 1,
+      "likes": 0,
+      "dislikes": 0,
+      "sortByTime": "2/10/2023, 9:03:54 PM"
+    },
+    {
+      "title": "a",
+      "question": "a",
+      "isEdited": false,
+      "id": 1676058597079,
+      "userId": 1,
+      "likes": 0,
+      "dislikes": 0,
+      "sortByTime": "2/10/2023, 9:49:57 PM"
     }
   ],
   "answers": [
@@ -119,6 +175,51 @@
       "userId": 1,
       "edited": true,
       "content": "ssss",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "postId": "1676051869006",
+      "userId": 1,
+      "content": "labas",
+      "id": 1676052553058,
+      "edited": false,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "id": 1676054524824,
+      "postId": "1675949611755",
+      "userId": 1,
+      "edited": false,
+      "content": "turi atsakyma",
+      "likes": 1,
+      "dislikes": 1
+    },
+    {
+      "postId": "1676055834256",
+      "userId": 1,
+      "content": "a",
+      "id": 1676056228039,
+      "edited": false,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "postId": "1676052568327",
+      "userId": 1,
+      "content": "aa",
+      "id": 1676056233475,
+      "edited": false,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "postId": "1675949611755",
+      "userId": 1,
+      "content": "aaa",
+      "id": 1676058601897,
+      "edited": false,
       "likes": 0,
       "dislikes": 0
     }
