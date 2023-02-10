@@ -44,7 +44,7 @@ const AnswerProvider = ({ children }) => {
         answers.map((answer) =>
           answer.id.toString() === id ? { ...answer, ...data } : answer
         )
-      );
+      );  console.log(setAnswers)
     } 
 
     const likeAnswer = async (id) => {
@@ -74,6 +74,7 @@ const AnswerProvider = ({ children }) => {
       value={{
         answers,
         addAnswer,
+        setAnswers,
         deleteAnswer,
         editAnswer,
         likeAnswer,

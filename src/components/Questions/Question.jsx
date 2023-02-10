@@ -8,7 +8,7 @@ const Question = ({ data, questionContent }) => {
   const { answers } = useContext(AnswerContext);
   const { users, loggedInUser } = useContext(UserContext);
   const { deleteQuestion, likeQuestion, dislikeQuestion } = useContext(QuestionContext);
-   const [selectedQuestion, setSelectedQuestion] = useState(null);
+   const [, setSelectedQuestion] = useState(null);
 
   const questionOwner = users.find(user => user.id === data.userId) || {};
 

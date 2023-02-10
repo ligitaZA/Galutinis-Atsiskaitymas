@@ -5,15 +5,16 @@ import QuestionContext from "../../context/QuestionContext";
 import { useParams } from "react-router-dom";
 
 const Answer = () => {
-
   const { id } = useParams();
+
   const [editingAnswerId, setEditingAnswerId] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
-  const [editedAnswer, setEditedAnswer] = useState("");
+  const [editedAnswer, setEditedAnswer] = useState('');
+
   const [questionAnswers, setPostAnswers] = useState([]);
   const { users, loggedInUser } = useContext(UserContext);
-  const { answers, addAnswer, deleteAnswer, likeAnswer, dislikeAnswer, editAnswer } = useContext(AnswerContext);
-  const {questions} = useContext(QuestionContext)
+  const { answers, setAnswers, addAnswer, deleteAnswer, likeAnswer, dislikeAnswer, editAnswer } = useContext(AnswerContext);
+  const { questions } = useContext(QuestionContext)
 
   const selectedQuestion = questions.find(question => question.id.toString() === id);
 
@@ -22,8 +23,13 @@ const Answer = () => {
     setPostAnswers(questionAnswers);
   }, [answers, id]);
 
+  useEffect(() => {
+    setPostAnswers(answers.filter(answer => answer.postId === id));
+  }, [answers, id]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!e.target[0].value) return;
     const newAnswer = {
       postId: id,
       userId: loggedInUser.id,
@@ -34,7 +40,7 @@ const Answer = () => {
       dislikes: 0
     };
     addAnswer(newAnswer);
-    e.target[0].value = "";
+    e.target[0].value = '';
   };
 
   const handleEdit = (answer) => {
@@ -43,12 +49,27 @@ const Answer = () => {
     setEditedAnswer(answer.content);
   };
 
-  const handleUpdate = (answerId, updatedAnswers) => {
-    editAnswer(answerId, updatedAnswers);
+  const handleUpdate = async (e) => {
+    e.preventDefault();
+    const answer = answers.find(answer => answer.id === editingAnswerId);
+    const updatedAnswers = {
+      id: editingAnswerId,
+      postId: id,
+      userId: loggedInUser.id,
+      edited: true,
+      content: editedAnswer,
+      likes: answer.likes,
+      dislikes: answer.dislikes
+    }
+    setAnswers((prevAnswers) =>
+    prevAnswers.map((answer) =>
+      answer.id.toString() === editingAnswerId ? { ...answer, ...updatedAnswers } : answer
+    )
+  );
     setIsEditing(false);
-    setEditedAnswer('');
-    setEditingAnswerId(null)
+    editAnswer(editingAnswerId, updatedAnswers);
   };
+
 
   return (
     <>
@@ -86,10 +107,13 @@ const Answer = () => {
                 </div>
                 {
                   isEditing && answer.id === editingAnswerId ? (
-                    <form onSubmit={() => handleUpdate(answer.id, editedAnswer)}>
-                      <input type="text" value={editedAnswer} onChange={(e) => setEditedAnswer(e.target.value)} />
-                      <button type="submit">Update</button>
-                    </form>
+                    <form onSubmit={(e) => handleUpdate(e)}>
+  <input 
+  type="text" 
+  value={editedAnswer} 
+  onChange={(e) => setEditedAnswer(e.target.value)} />
+  <button type="submit">Update</button>
+</form>
                   ) : (
                     <div className="content">
                       <p>{answer.content}</p>

@@ -105,15 +105,6 @@
       "id": 1676021788192
     },
     {
-      "postId": "1676029753467",
-      "userId": 1,
-      "content": "aaa",
-      "id": 1676029757797,
-      "edited": false,
-      "likes": 0,
-      "dislikes": 0
-    },
-    {
       "postId": "1676021304920",
       "userId": 1,
       "content": "labas",
@@ -123,13 +114,40 @@
       "dislikes": 1
     },
     {
+      "id": 1676046304511,
       "postId": "1675949611755",
       "userId": 1,
-      "content": "labas",
-      "id": 1676034459991,
-      "edited": false,
+      "edited": true,
+      "content": "",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "id": 1676046523995,
+      "postId": "1675949611755",
+      "userId": 1,
+      "edited": true,
+      "content": "xdfgdfg",
       "likes": 1,
       "dislikes": 1
+    },
+    {
+      "id": 1676046531729,
+      "postId": "1675949611755",
+      "userId": 1,
+      "edited": true,
+      "content": "xxxsss",
+      "likes": 0,
+      "dislikes": 2
+    },
+    {
+      "id": 1676049666724,
+      "postId": "1676029753467",
+      "userId": 1,
+      "edited": true,
+      "content": "ssss",
+      "likes": 0,
+      "dislikes": 0
     }
   ]
 }

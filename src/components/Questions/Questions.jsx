@@ -5,7 +5,7 @@ import Question from './Question'
 const Questions = () => {
   const { questions } = useContext(QuestionContext);
 
-  const [questionContent, setQuestionContent] = useState("all");
+  const [questionContent] = useState("all");
   const [questionSort, setQuestionSort] = useState("asc");
 
   
