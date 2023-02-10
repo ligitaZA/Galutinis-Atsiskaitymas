@@ -62,10 +62,10 @@ const Answer = () => {
       dislikes: answer.dislikes
     }
     setAnswers((prevAnswers) =>
-    prevAnswers.map((answer) =>
-      answer.id.toString() === editingAnswerId ? { ...answer, ...updatedAnswers } : answer
-    )
-  );
+      prevAnswers.map((answer) =>
+        answer.id.toString() === editingAnswerId ? { ...answer, ...updatedAnswers } : answer
+      )
+    );
     setIsEditing(false);
     editAnswer(editingAnswerId, updatedAnswers);
   };
@@ -73,10 +73,10 @@ const Answer = () => {
 
   return (
     <>
-    <div>
-      <h2>{selectedQuestion.title}</h2>
-      <p>{selectedQuestion.question}</p>
-    </div>
+      <div>
+        <h2>{selectedQuestion.title}</h2>
+        <p>{selectedQuestion.question}</p>
+      </div>
       <div className="post-answers">
         {
           questionAnswers.map(answer => {
@@ -108,12 +108,12 @@ const Answer = () => {
                 {
                   isEditing && answer.id === editingAnswerId ? (
                     <form onSubmit={(e) => handleUpdate(e)}>
-  <input 
-  type="text" 
-  value={editedAnswer} 
-  onChange={(e) => setEditedAnswer(e.target.value)} />
-  <button type="submit">Update</button>
-</form>
+                      <input
+                        type="text"
+                        value={editedAnswer}
+                        onChange={(e) => setEditedAnswer(e.target.value)} />
+                      <button type="submit">Update</button>
+                    </form>
                   ) : (
                     <div className="content">
                       <p>{answer.content}</p>
