@@ -26,18 +26,14 @@
       "likes": 34
     },
     {
-      "title": "Take a Breakz",
-      "question": "gkgk",
+      "title": "labas",
+      "question": "aa",
+      "isEdited": false,
+      "id": 1676058508305,
       "userId": 1,
-      "isEdited": true,
-      "id": 1676021304920
-    },
-    {
-      "title": "Take a Break",
-      "question": "",
-      "userId": 1,
-      "isEdited": true,
-      "id": 1676029753467
+      "likes": 0,
+      "dislikes": 0,
+      "sortByTime": "2/10/2023, 9:48:28 PM"
     }
   ],
   "answers": [
