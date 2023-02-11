@@ -6,6 +6,7 @@ const QuestionContext = createContext();
 
 const QuestionProvider = ({ children }) => {
   const [questions, setQuestions] = useState([]);
+  const [questionsToShow, setQuestionsToShow] = useState([])
 
   useEffect(() => {
     const fetchMessages = async () => {
@@ -30,15 +31,16 @@ const QuestionProvider = ({ children }) => {
       });
       const data = await res.json();
       setQuestions([...questions, data]);
+      setQuestionsToShow([...questions, data]);
     } 
 
-  const deleteQuestion = async (id) => {
-    console.log("deleteQuestion called with id: ", id);
+    const deleteQuestion = async (id) => {
       await fetch(`http://localhost:5000/questions/${id}`, {
         method: 'DELETE',
       });
-      setQuestions(questions.filter(question => question.id !== id))
-    } 
+      setQuestions(questions.filter(question => question.id !== id));
+      setQuestionsToShow(questionsToShow.filter(question => question.id !== id));
+    };
 
   const editQuestion = async (id, updatedQuestion) => {
       const res = await fetch(`http://localhost:5000/questions/${id}`, {
@@ -49,7 +51,12 @@ const QuestionProvider = ({ children }) => {
       const data = await res.json();
       setQuestions(
         questions.map((question) =>
-          question.id.toString() === id ? { ...question, ...data } : question
+          question.id=== id ? { ...question, ...data } : question
+        )
+      );
+      setQuestionsToShow(
+        questionsToShow.map((question) =>
+          question.id=== id ? { ...question, ...data } : question
         )
       );
     } 
@@ -63,17 +70,21 @@ const QuestionProvider = ({ children }) => {
         headers: { 'Content-Type': 'application/json' }
       });
       setQuestions(questions.map(question => question.id === id ? { ...question, likes: question.likes + 1 } : question));
+      setQuestionsToShow(questions.map(question => question.id === id ? { ...question, likes: question.likes + 1 } : question));
     }
   
     const dislikeQuestion = async (id) => {
       const question = questions.find(question => question.id === id);
+      console.log(question.id)
       const updatedQuestion = { ...question, dislikes: question.dislikes + 1 };
+      console.log(updatedQuestion)
       await fetch(`http://localhost:5000/questions/${id}`, {
         method: 'PATCH',
         body: JSON.stringify(updatedQuestion),
         headers: { 'Content-Type': 'application/json' }
       });
       setQuestions(questions.map(question => question.id === id ? { ...question, dislikes: question.dislikes + 1 } : question));
+      setQuestionsToShow(questions.map(question => question.id === id ? { ...question, dislikes: question.dislikes + 1 } : question));
     }
   
 
@@ -83,6 +94,8 @@ const QuestionProvider = ({ children }) => {
         questions,
         addQuestion,
         deleteQuestion,
+        questionsToShow,
+        setQuestionsToShow,
         editQuestion,
         likeQuestion,
         dislikeQuestion,

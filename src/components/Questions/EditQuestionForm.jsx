@@ -6,10 +6,10 @@ import UserContext from "../../context/UserContext";
 
 const EditQuestionForm = () => {
   const { id } = useParams();
-  const { questions, editQuestion } = useContext(QuestionContext);
+  const { questionsToShow, editQuestion } = useContext(QuestionContext);
   const { loggedInUser} = useContext(UserContext);
 
-  const currentQuestion = questions.find(q => q.id.toString() === id)
+  const currentQuestion = questionsToShow.find(q => q.id.toString() === id)
 
   const navigation = useNavigate();
 

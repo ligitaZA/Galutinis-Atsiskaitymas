@@ -14,8 +14,9 @@ const Answer = () => {
   const [questionAnswers, setQuestionAnswers] = useState([]);
   const { users, loggedInUser } = useContext(UserContext);
   const { answers, setAnswers, addAnswer, deleteAnswer, likeAnswer, dislikeAnswer, editAnswer } = useContext(AnswerContext);
-  const [, setHasAnswer] = useState(false);
   const { questions } = useContext(QuestionContext)
+  const [userLikes, setUserLikes] = useState([]);
+   const [userDislikes, setUserDislikes] = useState([]);
 
   const selectedQuestion = questions.find(question => question.id.toString() === id);
 
@@ -26,7 +27,6 @@ const Answer = () => {
 
   useEffect(() => {
     setQuestionAnswers(answers.filter(answer => answer.postId === id));
-    setHasAnswer(questionAnswers.length > 0);
   }, [answers, id]);
 
   const handleSubmit = (e) => {
@@ -71,7 +71,17 @@ const Answer = () => {
     setIsEditing(false);
     editAnswer(editingAnswerId, updatedAnswers);
   };
+  const handleLike = id => {
+    if (userLikes.includes(loggedInUser.id)) return;
+    setUserLikes([...userLikes, loggedInUser.id]);
+    likeAnswer(id);
+  };
 
+  const handleDislike = id => {
+    if (userDislikes.includes(loggedInUser.id)) return;
+    setUserDislikes([...userDislikes, loggedInUser.id]);
+    dislikeAnswer(id);
+  };
 
   return (
     <>
@@ -125,7 +135,7 @@ const Answer = () => {
                   <div className="likedAnswer">
                     {
                       loggedInUser && (
-                        <i className="fa fa-thumbs-o-up" onClick={() => likeAnswer(answer.id)}></i>
+                        <i className="fa fa-thumbs-o-up" onClick={() => handleLike(answer.id)}></i>
                       )
                     }
                     <span>{answer.likes} likes</span>
@@ -134,7 +144,7 @@ const Answer = () => {
                   <div className="dislikedAnswer">
                     {
                       loggedInUser && (
-                        <i className="fa fa-thumbs-o-down" onClick={() => dislikeAnswer(answer.id)}></i>
+                        <i className="fa fa-thumbs-o-down" onClick={() => handleDislike(answer.id)}></i>
                       )
                     }
                     <span>{answer.dislikes} dislikes</span>

@@ -7,7 +7,11 @@ const Question = ({ data }) => {
   const { users, loggedInUser } = useContext(UserContext);
   const { deleteQuestion, likeQuestion, dislikeQuestion } = useContext(QuestionContext);
    const [, setSelectedQuestion] = useState(null);
+   const [userLikes, setUserLikes] = useState([]);
+   const [userDislikes, setUserDislikes] = useState([]);
   const questionOwner = users.find(user => user.id === data.userId) || {};
+  
+
 
   const handleQuestionSelection = (question, title) => {
     setSelectedQuestion({
@@ -16,22 +20,35 @@ const Question = ({ data }) => {
     });
   };
 
+  const handleLike = id => {
+    if (userLikes.includes(loggedInUser.id)) return;
+    setUserLikes([...userLikes, loggedInUser.id]);
+    likeQuestion(id);
+  };
+
+  const handleDislike = id => {
+    if (userDislikes.includes(loggedInUser.id)) return;
+    setUserDislikes([...userDislikes, loggedInUser.id]);
+    dislikeQuestion(id);
+  };
+  
   return (
     <>
       <div className="question-container">
 
         <div className="likedislike-container">
           <div className="like">
-            {loggedInUser && (
+          {loggedInUser && (
               <div className="like-dislike">
-                <i className="fa fa-thumbs-o-up" onClick={() => likeQuestion(data.id)} />
-              </div>)}
+                <i className="fa fa-thumbs-o-up" onClick={() => handleLike(data.id)} />
+              </div>
+            )}
             <span className="like">{data.likes} likes</span>
           </div>
           <div className="dislike">
-            {loggedInUser && (
+          {loggedInUser && (
               <div className="like-dislike">
-                <i className="fa fa-thumbs-o-down" onClick={() => dislikeQuestion(data.id)} />
+                <i className="fa fa-thumbs-o-down" onClick={() => handleDislike(data.id)} />
               </div>
             )}
             <span className="dislike">{data.dislikes} dislikes</span>
