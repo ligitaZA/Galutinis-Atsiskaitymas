@@ -1,14 +1,20 @@
 import { useContext, useState } from "react";
 import AnswerContext from "../../context/AnswerContext";
 import QuestionContext from "../../context/QuestionContext";
+
 import Question from './Question'
 
-const Questions = () => {
-  const { questions } = useContext(QuestionContext);
-  const [questionsToShow, setQuestionsToShow] = useState([]);
+
+const Questions = ({deleteQuestion}) => {  
+
+  const { questions, setQuestionsToShow, questionsToShow } = useContext(QuestionContext);
+  // const [questionsToShow, setQuestionsToShow] = useState([]);
   const [questionSort, setQuestionSort] = useState("asc");
   const { answers } = useContext(AnswerContext)
 
+  
+
+  
   const handleSortChange = (e) => {
     setQuestionSort(e.target.value);
   };
@@ -23,14 +29,14 @@ const Questions = () => {
 
   const answeredQuestions = () => {
     const answered = questions.filter(question => {
-      return answers.some(answer => answer.postId === question.id.toString());
+      return answers.some(answer => parseInt(answer.postId) === question.id);
     });
     setQuestionsToShow(answered);
   };
 
   const unansweredQuestions = () => {
     const unanswered = questions.filter(question => {
-      return !answers.some(answer => answer.postId === question.id.toString());
+      return !answers.some(answer => parseInt(answer.postId) === question.id);
     });
 
     setQuestionsToShow(unanswered);
@@ -60,7 +66,9 @@ const Questions = () => {
             questionsToShow.map(question => (
               <Question
                 key={question.id}
-                data={question}/>
+                data={question}
+                deleteQuestion={deleteQuestion}
+                questionsToShow={questionsToShow}/>
             )) :
             questionsToShow ? <p>Filter available questions</p> : <p>Loading...</p>
         }
@@ -68,6 +76,5 @@ const Questions = () => {
     </>
   );
 };
-
 
 export default Questions;
