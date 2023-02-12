@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import AnswerContext from "../../context/AnswerContext";
 import QuestionContext from "../../context/QuestionContext";
 import Question from './Question';
@@ -8,15 +8,6 @@ const Questions = () => {
   const [questionSort, setQuestionSort] = useState("sort");
   const { answers } = useContext(AnswerContext)
 
-  useEffect(() => {
-    const data = async () => {
-      const res = await fetch("http://localhost:5000/questions");
-      const data = await res.json();
-      setQuestionsToShow(data);
-    };
-    data();
-  }, []);
-  
   const sortQuestions = () => {
     const sortedQuestions = [...questions].sort((a, b) => {
       if (questionSort === "sort") {
