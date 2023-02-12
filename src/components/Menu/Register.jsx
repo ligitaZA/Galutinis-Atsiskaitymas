@@ -58,6 +58,7 @@ const Register = () => {
   return (
     <>
       <div className="register">
+        <h2>Register</h2>
         <div className="register-form">
           {invalidUsername && <div className="error-message">This username is already taken, please choose a different one</div>}
         <Formik

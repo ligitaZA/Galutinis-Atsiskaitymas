@@ -120,6 +120,8 @@
 .question-user {
   display: flex;
   align-items: center;
+  padding: 5px;
+  gap: 5px;
 }
 .question .title{
   display: flex;
@@ -158,6 +160,7 @@
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  border-top: 1px solid #01949A;
 }
 .answers button {
   font-family: 'Raleway';

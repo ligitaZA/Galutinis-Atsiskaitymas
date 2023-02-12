@@ -33,7 +33,7 @@
       "id": 1676212630944,
       "userId": 1,
       "likes": 2,
-      "dislikes": 1,
+      "dislikes": 2,
       "sortByTime": "2/12/2023, 4:37:10 PM"
     },
     {
@@ -47,23 +47,13 @@
       "sortByTime": "2/12/2023, 4:44:31 PM"
     },
     {
-      "title": "a",
-      "question": "aaaaa",
-      "isEdited": false,
-      "id": 1676213165892,
-      "userId": 1676213157602,
-      "likes": 2,
-      "dislikes": 1,
-      "sortByTime": "2/12/2023, 4:46:05 PM"
-    },
-    {
       "title": "Crank Up the Music",
       "question": "ccccccccc",
       "isEdited": false,
       "id": 1676215639361,
       "userId": 1,
       "likes": 0,
-      "dislikes": 0,
+      "dislikes": 1,
       "sortByTime": "2/12/2023, 5:27:19 PM"
     }
   ],
@@ -255,7 +245,7 @@
       "id": 1676213082071,
       "edited": false,
       "likes": 1,
-      "dislikes": 0
+      "dislikes": 1
     }
   ]
 }

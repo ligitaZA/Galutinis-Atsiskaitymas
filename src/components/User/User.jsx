@@ -18,7 +18,7 @@ const User = () => {
         </Link>
       </div>
       <div className="addQuestions">
-      <Link to="/addQuestions">Add New Post</Link>
+      <Link to="/addQuestions">Add New Question</Link>
       </div>
         
         <div className="userPart">
