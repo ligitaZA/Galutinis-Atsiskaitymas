@@ -1,0 +1,269 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "userName": "Ligita",
+      "email": "ligitazaicevaite@gmail.com",
+      "password": "123456789",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/5087/5087579.png"
+    },
+    {
+      "userName": "labas",
+      "password": "123456789",
+      "passwordRepeat": "123456789",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/5087/5087579.png",
+      "id": 1675691867162,
+      "level": "user"
+    },
+    {
+      "userName": "heloo",
+      "password": "123456789",
+      "passwordRepeat": "123456789",
+      "avatar": "https://cdn2.iconfinder.com/data/icons/essenstial-ultimate-ui/64/avatar-512.png",
+      "id": 1676213157602,
+      "level": "user",
+      "isBanned": false
+    }
+  ],
+  "questions": [
+    {
+      "title": "Loop inside React JSX",
+      "question": " realize and to function calls. However, coming from template land and being new to JSX, I am unsure how I would achieve the above (adding a component multiple times).",
+      "userId": 1676213157602,
+      "isEdited": true,
+      "likes": 6,
+      "dislikes": 6,
+      "sortByTime": "2/12/2023, 6:58:06 PM",
+      "id": 1676221086426
+    },
+    {
+      "title": "What are these three dots in React doing?",
+      "question": "What does the ... do in this React (usig JSX) code and what is it called?\n\n<Modal {...this.props} title='Modal heading' animation={false}>",
+      "userId": 1,
+      "isEdited": true,
+      "likes": 0,
+      "dislikes": 1,
+      "sortByTime": "2/12/2023, 7:01:01 PM",
+      "id": 1676221261393
+    },
+    {
+      "title": "Difference between npx and npm?",
+      "question": "935\nI have just started learning React, and Facebook helps in simplifying the initial setup by providing the following ready-made project.\n\nIf I have to install the skeleton project I have to type npx create-react-app my-app in command-line.\n\nI was wondering why does the Facebook in Github have npx create-react-app my-app rather than npm create-react-app my-app?",
+      "userId": 1676213157602,
+      "isEdited": true,
+      "likes": 0,
+      "dislikes": 1,
+      "sortByTime": "2/12/2023, 7:45:02 PM",
+      "id": 1676223902059
+    }
+  ],
+  "answers": [
+    {
+      "postId": "1675951912164",
+      "userId": 1,
+      "content": "v",
+      "id": 1675964325466,
+      "edited": false,
+      "likes": 0,
+      "dislikes": 2
+    },
+    {
+      "postId": "1675951912164",
+      "userId": 1,
+      "content": "vvv",
+      "id": 1675964738610,
+      "edited": false,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "postId": "1675965922047",
+      "userId": 1,
+      "content": "hnmvbn ",
+      "id": 1675965928349,
+      "edited": false,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "postId": "1675952393921",
+      "userId": 1,
+      "content": "labas",
+      "id": 1675967048089,
+      "edited": false,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "postId": "1675955891867",
+      "userId": 1,
+      "content": "zzz",
+      "id": 1675967929124,
+      "edited": false,
+      "likes": 2,
+      "dislikes": 2
+    },
+    {
+      "postId": "1676017235591",
+      "userId": 1,
+      "content": "aaaaaaa",
+      "id": 1676017243255,
+      "edited": false,
+      "likes": 1,
+      "dislikes": 1
+    },
+    {
+      "postId": "1676021304920",
+      "userId": 1,
+      "content": "labas",
+      "id": 1676033586037,
+      "edited": false,
+      "likes": 1,
+      "dislikes": 1
+    },
+    {
+      "id": 1676049666724,
+      "postId": "1676029753467",
+      "userId": 1,
+      "edited": true,
+      "content": "ssss",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "postId": "1676051869006",
+      "userId": 1,
+      "content": "labas",
+      "id": 1676052553058,
+      "edited": false,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "postId": "1676055834256",
+      "userId": 1,
+      "content": "a",
+      "id": 1676056228039,
+      "edited": false,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "postId": "1676052568327",
+      "userId": 1,
+      "content": "aa",
+      "id": 1676056233475,
+      "edited": false,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "id": 1676100840003,
+      "postId": "1676095232534",
+      "userId": 1,
+      "edited": false,
+      "content": "c",
+      "likes": 1,
+      "dislikes": 1
+    },
+    {
+      "postId": "1676102858644",
+      "userId": 1,
+      "content": "s",
+      "id": 1676102876907,
+      "edited": false,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "id": 1676142926368,
+      "postId": "1676142566955",
+      "userId": 1,
+      "edited": true,
+      "content": " vv",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "postId": "1676146310425",
+      "userId": 1,
+      "content": "h",
+      "id": 1676146319474,
+      "edited": false,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "postId": "1676148697099",
+      "userId": 1,
+      "content": "labas",
+      "id": 1676199999410,
+      "edited": false,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "postId": "1676208422708",
+      "userId": 1,
+      "content": "bnsf",
+      "id": 1676209318868,
+      "edited": false,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "id": 1676210493273,
+      "postId": "1676210391128",
+      "userId": 1,
+      "edited": true,
+      "content": "jjjjjjjjjjjjeeeeeeeeeeec  hffffffffffffjjjjjjjjjj",
+      "likes": 1,
+      "dislikes": 3
+    },
+    {
+      "id": 1676211005303,
+      "postId": "1676210954633",
+      "userId": 1,
+      "edited": true,
+      "content": "kas tau gali atasakytlii",
+      "likes": 1,
+      "dislikes": 1
+    },
+    {
+      "id": 1676212075379,
+      "postId": "1676212065913",
+      "userId": 1,
+      "edited": false,
+      "content": "jjjjjjjjj",
+      "likes": 1,
+      "dislikes": 2
+    },
+    {
+      "postId": "1676212630944",
+      "userId": 1675691867162,
+      "content": "ssssssssssss",
+      "id": 1676213082071,
+      "edited": false,
+      "likes": 1,
+      "dislikes": 1
+    },
+    {
+      "id": 1676221183311,
+      "postId": "1676221086426",
+      "userId": 1,
+      "edited": true,
+      "content": "You might want to checkout React Templates, which does let you use JSX-style templates in React, with a few directives (such as rt-repeat).  Your example, if you used react-templates, would be:  <tbody>      <ObjectRow rt-repeat=\"obj in objects\"/> </tbody>",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "postId": "1676221086426",
+      "userId": 1676213157602,
+      "content": "You might want to checkout React Templates, which does let you use JSX-style templates in React, with a few directives (such as rt-repeat). Your example, if you used react-templates, would be: <tbody> <ObjectRow rt-repeat=\"obj in objects\"/> </tbody>",
+      "id": 1676230362076,
+      "edited": true,
+      "likes": 1,
+      "dislikes": 0
+    }
+  ]
+}

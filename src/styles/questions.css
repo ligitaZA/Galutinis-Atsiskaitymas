@@ -1,0 +1,315 @@
+
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+  padding: 80px 170px 20px;
+  font-family: 'Raleway';
+}
+.filter-container .buttons p {
+  margin: 5px 10px;
+}
+.filter-container .buttons button {
+  background: linear-gradient(to bottom right,#87B1B0, #87B1B0);
+  border: 0;
+  border-radius: 5px;
+  color: #fffdfd;
+  cursor: pointer;
+  font-weight: 500;
+  outline: transparent;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  font-family: 'Raleway';
+  font-size: 16px;
+}
+
+.filter-container .buttons button:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem #87B1B0, .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.filter-container .buttons button:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem #87B1B0, .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+.filter-container .buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.filter-container .sorting {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  
+}
+.filter-container .sorting .sort-posts {
+  background: linear-gradient(to bottom right, #87B1B0, #87B1B0);
+  border: 0;
+  border-radius: 5px;
+  color: #fffdfd;
+  cursor: pointer;
+  padding: 5px 10px;
+  outline: transparent;
+  font-family: 'Raleway';
+  font-size: 16px;
+}
+.filter-container .sorting .sort-posts option{
+  color: black;
+}
+
+.questions-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-family: 'Raleway';
+}
+.question-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 80%;
+  border: 0 solid #E2E8F0;
+  box-shadow: 2px 4px 6px 2px rgba(0, 0, 0, 0.1), 2px 2px 4px 2px rgba(0, 0, 0, 0.06);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.likedislike-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.like-dislike {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.like-dislike i {
+  font-size: 25px;
+}
+.like, .dislike {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+.question-container .questionOwner {
+  display: flex;
+  align-items: center;
+  font-family: 'Raleway';
+  justify-content: space-between;
+  border-bottom: #01949A 1px solid;
+}
+.question-container .questionOwner img {
+  height: 40px;
+}
+.question-container .right{
+  flex: 1;
+}
+.question-user {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  gap: 5px;
+}
+.question .title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.question .title h3 {
+  font-family: 'Cinzel';
+}
+.question .post-question {
+  margin-bottom: 20px;
+}
+.questionOwner .delete-edit{
+  display: flex;
+  gap: 10px;}
+
+.questionOwner .delete-edit button{
+  font-family: 'Raleway';
+  text-decoration: none;
+  padding: 5px 10px;
+  background-color: #01949A;
+  color: #E5DDC8;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.questionOwner .delete-edit button a {
+  text-decoration: none;
+  color: #E5DDC8;
+}
+.questionOwner .delete-edit button:hover {
+  background-color: #87B1B0;
+}
+.answers {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-top: 1px solid #01949A;
+}
+.answers button {
+  font-family: 'Raleway';
+  text-decoration: none;
+  padding: 5px 10px;
+  background-color: #87b1b054;
+  color: #DB1F48;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+.answers button:hover {
+  background-color: #E5DDC8;
+}
+.noquestions {
+  margin: 30px auto;
+  font-size: larger;
+}
+.chatUsers {
+  padding-top: 100px;
+}
+.chatUsers .chat {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: auto;
+  margin: 0px auto;
+  font-family: "Raleway";
+  justify-content: space-between;
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: rgba(122, 194, 194, 0.616) 0 3px 5px -1px, rgba(134, 168, 112, 0.14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #000000;
+}
+.chatUsers form {
+  padding: 20px;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: #dfdfebbb;
+}
+
+.chatUsers form input, textarea {
+  border: 0;
+  font-size: 15px;
+  border-radius: 4px;
+  color: #000000;
+  height: 30px;
+  width: 300px;
+  background-color: rgb(194, 179, 179);
+}
+.chatUsers form textarea {
+  height: 80px;
+}
+
+.chatUsers form button {
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 24px 0 12px;
+  padding: 10px 30px;
+  border: none;
+  background-color: #01949A;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Raleway";
+}
+.chatUsers form button:hover {
+  background-color: #b5d3c4;
+  color:#DB1F48
+}
+.chatUsers form label {
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h2 {
+  margin: 10px auto;
+  text-align: center;
+}
+
+.questionForm {
+  padding: 100px;
+}
+.edit {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: auto;
+  margin: 0px auto;
+  font-family: "Raleway";
+  justify-content: space-between;
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: rgba(122, 194, 194, 0.616) 0 3px 5px -1px, rgba(134, 168, 112, 0.14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #000000;
+}
+.questionForm form {
+  padding: 20px;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: #dfdfebbb;
+}
+
+.questionForm form input {
+  border: 0;
+  font-size: 15px;
+  border-radius: 4px;
+  color: #000000;
+  height: 30px;
+  width: 300px;
+  background-color: rgb(194, 179, 179);
+}
+
+.questionForm form button {
+  text-align: center;
+  border-radius: 4px;
+  font-size: 15px;
+  margin: 24px 0 12px;
+  padding: 10px 30px;
+  border: none;
+  background-color: #01949A;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Raleway";
+}
+.questionForm textarea {
+  height: 70px;
+}
+.questionForm form button:hover {
+  background-color: #b5d3c4;
+  color:#DB1F48
+}
+.questionForm form label {
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.lower {
+  display: flex;
+  gap: 50px;
+}
