@@ -26,6 +26,7 @@ const Answer = () => {
     setQuestionAnswers(questionAnswers);
   }, [answers, id]);
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!e.target[0].value) return;

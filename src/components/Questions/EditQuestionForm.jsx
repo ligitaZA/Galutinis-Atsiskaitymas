@@ -6,13 +6,12 @@ import UserContext from "../../context/UserContext";
 
 const EditQuestionForm = () => {
   const { id } = useParams();
-  const { questionsToShow,editQuestion } = useContext(QuestionContext);
-  const { loggedInUser} = useContext(UserContext);
+  const { questionsToShow, editQuestion } = useContext(QuestionContext);
+  const { loggedInUser } = useContext(UserContext);
 
   const currentQuestion = questionsToShow.find(q => q.id.toString() === id)
 
   const navigation = useNavigate();
-
 
   const [questionInputs, setQuestionsInputs] = useState({
     title: currentQuestion.title,
@@ -24,7 +23,7 @@ const EditQuestionForm = () => {
     sortByTime: currentQuestion.sortByTime
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     editQuestion(id, questionInputs);
     navigation('/');
@@ -33,30 +32,29 @@ const EditQuestionForm = () => {
   return (
     <>
       <div className="questionForm">
-      <div className="edit">
-        <form onSubmit={handleSubmit}>
-          <label>
-            Heading:
-            <input 
-            type="text" 
-            name="title"
-              value={questionInputs.title}
-              onChange={(e) => setQuestionsInputs({ ...questionInputs, title: e.target.value })}
-            />
-          </label>
-          <label>
-            Content:
-            <textarea 
-            type="text" 
-            name="question"
-              value={questionInputs.question}
-              onChange={(e) => setQuestionsInputs({ ...questionInputs, question: e.target.value })}
-            />
-          </label>
-          <button type="submit" className="button" value="">Edit Question</button>
-        </form>
-      </div>
-        
+        <div className="edit">
+          <form onSubmit={handleSubmit}>
+            <label>
+              Heading:
+              <input
+                type="text"
+                name="title"
+                value={questionInputs.title}
+                onChange={(e) => setQuestionsInputs({ ...questionInputs, title: e.target.value })}
+              />
+            </label>
+            <label>
+              Content:
+              <textarea
+                type="text"
+                name="question"
+                value={questionInputs.question}
+                onChange={(e) => setQuestionsInputs({ ...questionInputs, question: e.target.value })}
+              />
+            </label>
+            <button type="submit" className="button" value="">Edit Question</button>
+          </form>
+        </div>
       </div>
     </>);
 }

@@ -9,9 +9,14 @@ const Questions = () => {
   const { answers } = useContext(AnswerContext)
 
   useEffect(() => {
-    setQuestionsToShow(questions);
-  }, [questions, setQuestionsToShow]);
-
+    const data = async () => {
+      const res = await fetch("http://localhost:5000/questions");
+      const data = await res.json();
+      setQuestionsToShow(data);
+    };
+    data();
+  }, []);
+  
   const sortQuestions = () => {
     const sortedQuestions = [...questions].sort((a, b) => {
       if (questionSort === "sort") {
