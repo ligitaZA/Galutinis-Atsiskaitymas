@@ -19,7 +19,7 @@ const UserProvider = ({ children }) => {
       });
   }, []);
 
-  const addNewUser = (newUser) => {
+   const addNewUser = (newUser) => {
     setUsers([...users, newUser]);
   }
 

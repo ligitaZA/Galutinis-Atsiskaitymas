@@ -2,17 +2,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  flex-wrap: wrap;
+  gap: 10px;
 }
 .headerUser img {
   height: 40px;
+  border-radius: 50%;
 }
 .headerUser .userPart {
   display: flex;
   align-items: center;
   gap: 10px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  flex-wrap: wrap;
 }
-
 
 .formsBtns {
   display: flex;
@@ -20,39 +24,68 @@
   justify-content: center;
 
 }
-.loginRegister a {
+.loginRegister {
+  background: #87B1B0;
+  background: linear-gradient(90deg, #87B1B0 0%, #01949A 0%, #CDD3D0 100%);
+  display: flex;
+  justify-content: space-evenly;
+  padding: 8px 70px;
+  align-items: center;
+  border-bottom: 2px solid #DB1F48;
+  width: 90%;
+  position: fixed;
+  z-index: 1;
+}
+.loginRegister .formsBtns a {
   text-decoration: none;
   margin: 0;
-  padding: 10px;
+  padding: 5px 20px;
   border-radius: 4px;
-  font-weight: 500;
-  font-size: 20px;
-  background: #4b7d94b2;
+  background-color: #CDD3D0;
   line-height: 1em;
   box-sizing: border-box;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.26);
   color: #fff;
+  border: 1px solid  #01949A;
   cursor: pointer;
+  font-family: 'Cinzel';
+  font-weight: bold;
+}
+.loginRegister .logo a {
+  text-decoration: none;
+  margin: 0;
+  padding: 5px 20px;
+  border-radius: 4px;
+  line-height: 1em;
+  box-sizing: border-box;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.26);
+  color: #fff;
+  border: 1px solid  #bac3c4;
+  background-color: #01949A;
+  cursor: pointer;
+  font-family: 'Cinzel';
+  font-weight: bold;
 }
 
-
 .logIn {
+  padding: 100px;
+}
+.logIn .loginForm {
   display: flex;
   flex-direction: column;
   width: 500px;
   height: auto;
-  margin: 50px auto;
-  padding: 20px;
+  margin: 0px auto;
+  font-family: "Raleway";
   justify-content: space-between;
-  background-color: rgb(58, 107, 110);
-  border-radius: 5px 5px 0 0;
+  border-radius: 5px;
   border-style: none;
-  box-shadow: rgba(224, 226, 226, 0.616) 0 3px 5px -1px, rgba(226, 221, 221, 0.14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-shadow: rgba(122, 194, 194, 0.616) 0 3px 5px -1px, rgba(134, 168, 112, 0.14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
   box-sizing: border-box;
   color: #000000;
 }
-
 .logIn form {
+  padding: 20px;
   font-size: 15px;
   display: flex;
   flex-direction: column;
@@ -68,7 +101,7 @@
   color: #000000;
   height: 30px;
   width: 300px;
-  background-color: rgb(129, 119, 119);
+  background-color: rgb(194, 179, 179);
 }
 
 .logIn form button {
@@ -77,14 +110,16 @@
   font-weight: 500;
   margin: 24px 0 12px;
   padding: 10px 30px;
-  background: #4be6864b;
-  line-height: 1em;
-  box-sizing: border-box;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.26);
+  border: none;
+  background-color: #01949A;
   color: #fff;
   cursor: pointer;
+  font-family: "Raleway";
 }
-
+.logIn form button:hover {
+  background-color: #b5d3c4;
+  color:#DB1F48
+}
 .logIn form label {
   font-size: 15px;
   display: flex;
@@ -93,27 +128,30 @@
 }
 
 .register {
+  padding: 100px;
+}
+.register-form {
   display: flex;
   flex-direction: column;
+  width: 500px;
   height: auto;
-  margin: 30px auto;
-  padding: 20px;
+  margin: 0px auto;
+  font-family: "Raleway";
   justify-content: space-between;
-  background-color: rgb(58, 107, 110);
-  border-radius: 5px 5px 0 0;
+  border-radius: 5px;
   border-style: none;
-  box-shadow: rgba(187, 183, 183, 0.2) 0 3px 5px -1px, rgba(226, 221, 221, 0.14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-shadow: rgba(122, 194, 194, 0.616) 0 3px 5px -1px, rgba(134, 168, 112, 0.14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
   box-sizing: border-box;
   color: #000000;
 }
-
 .register form {
+  padding: 20px;
   font-size: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  background-color: #626268bb;
+  background-color: #dfdfebbb;
 }
 
 .register form input {
@@ -123,7 +161,7 @@
   color: #000000;
   height: 30px;
   width: 300px;
-  background-color: rgb(144, 155, 147);
+  background-color: rgb(194, 179, 179);
 }
 
 .register form button {
@@ -132,17 +170,92 @@
   font-weight: 500;
   margin: 24px 0 12px;
   padding: 10px 30px;
-  background: #5bd8a891;
-  line-height: 1em;
-  box-sizing: border-box;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.26);
+  border: none;
+  background-color: #01949A;
   color: #fff;
   cursor: pointer;
+  font-family: "Raleway";
 }
-
+.register form button:hover {
+  background-color: #b5d3c4;
+  color:#DB1F48
+}
 .register form label {
   font-size: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.headerUser {
+  background: #87B1B0;
+  background: linear-gradient(90deg, #87B1B0 0%, #01949A 0%, #CDD3D0 100%);
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 70px;
+  align-items: center;
+  border-bottom: 2px solid #DB1F48;
+  width: 90%;
+  position: fixed;
+  z-index: 1;
+}
+.headerUser .managingUsers {
+  display: flex;
+  gap: 10px;
+}
+.headerUser .managingUsers .editPost, .logOut {
+  font-family: 'Cinzel';
+  font-weight: bold;
+  text-decoration: none;
+  padding: 5px 20px;
+  background-color: #CDD3D0;
+  color: #344A70;
+  border-radius: 20px;
+  border: 1px solid  #01949A;
+}
+.headerUser .managingUsers .editPost a {
+  text-decoration: none;
+  color: #CDD3D0;
+}
+.headerUser .managingUsers .editPost:hover, .logOut:hover {
+  background-color: #01949A;
+  color: #CDD3D0;
+  transition: ease 0.3s;
+}
+.headerUser .managingUsers .editPost a:hover {
+  color: #CDD3D0;
+}
+.headerUser .homePart {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.headerUser .homePart a {
+  font-family: 'Cinzel';
+  font-weight: bold;
+  text-decoration: none;
+  padding: 5px 20px;
+  background-color: #CDD3D0;
+  color: #344A70;
+  border-radius: 20px;
+  border: none;
+}
+.headerUser .homePart a:hover{
+  background-color: #344A70;
+  color: #CDD3D0;
+  transition: ease 0.3s;
+}
+.headerUser .addQuestions a{
+  font-family: 'Cinzel';
+  font-weight: bold;
+  text-decoration: none;
+  padding: 5px 20px;
+  background-color: #CDD3D0;
+  color: #344A70;
+  border-radius: 20px;
+  border: 1px solid  #344A70;
+}
+.headerUser .addQuestions a:hover{
+  background-color: #344A70;
+  color: #CDD3D0;
+  transition: ease 0.3s;
 }

@@ -14,11 +14,13 @@ const User = () => {
   return (
     <div className="headerUser">
       <div className="homePart">
-        <div className="logo"></div>
         <Link to="/">HOME
         </Link>
       </div>
-        <Link to="/addQuestions">Add New Post</Link>
+      <div className="addQuestions">
+      <Link to="/addQuestions">Add New Post</Link>
+      </div>
+        
         <div className="userPart">
           <img
             src={loggedInUser.avatar}

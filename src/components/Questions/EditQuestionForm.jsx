@@ -6,32 +6,34 @@ import UserContext from "../../context/UserContext";
 
 const EditQuestionForm = () => {
   const { id } = useParams();
-  const { questionsToShow, editQuestion } = useContext(QuestionContext);
+  const { questionsToShow,editQuestion } = useContext(QuestionContext);
   const { loggedInUser} = useContext(UserContext);
 
   const currentQuestion = questionsToShow.find(q => q.id.toString() === id)
 
   const navigation = useNavigate();
 
+
   const [questionInputs, setQuestionsInputs] = useState({
     title: currentQuestion.title,
     question: currentQuestion.question,
     userId: loggedInUser.id,
-    isEdited: true
+    isEdited: true,
+    likes: currentQuestion.likes,
+    dislikes: currentQuestion.dislikes,
+    sortByTime: currentQuestion.sortByTime
   });
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
     editQuestion(id, questionInputs);
-
     navigation('/');
   }
 
   return (
     <>
       <div className="questionForm">
-      {questionInputs.isEdited && <p className="edited-message">Edited</p>}
+      <div className="edit">
         <form onSubmit={handleSubmit}>
           <label>
             Heading:
@@ -44,15 +46,17 @@ const EditQuestionForm = () => {
           </label>
           <label>
             Content:
-            <input 
+            <textarea 
             type="text" 
             name="question"
               value={questionInputs.question}
               onChange={(e) => setQuestionsInputs({ ...questionInputs, question: e.target.value })}
             />
           </label>
-          <input type="submit" value="Edit Question" />
+          <button type="submit" className="button" value="">Edit Question</button>
         </form>
+      </div>
+        
       </div>
     </>);
 }

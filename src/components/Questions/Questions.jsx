@@ -8,7 +8,6 @@ const Questions = () => {
   const [questionSort, setQuestionSort] = useState("sort");
   const { answers } = useContext(AnswerContext)
 
-
   useEffect(() => {
     setQuestionsToShow(questions);
   }, [questions, setQuestionsToShow]);
@@ -23,12 +22,11 @@ const Questions = () => {
     });
     setQuestionsToShow(sortedQuestions);
   };
-  
+
   const handleSortChange = (e) => {
     setQuestionSort(e.target.value);
     sortQuestions();
   };
-
 
   const answeredQuestions = () => {
     const answered = questions.filter(question => {
@@ -52,33 +50,34 @@ const Questions = () => {
     <>
       <div className="filter-container">
         <div className="buttons">
-          <p>Filter by :</p>
-        <button onClick={showAllQuestions}> Show All</button>
-        <button onClick={answeredQuestions}>Answered</button>
-        <button onClick={unansweredQuestions}>No Answer</button>
+          <p>Filter questions:</p>
+          <button onClick={answeredQuestions}>Answered</button>
+          <button onClick={unansweredQuestions}>No Answer</button>
+          <button onClick={showAllQuestions}> Show All</button>
         </div>
         <div className="sorting">
-          <label>Sort:</label>
-        <select
-          id="post-sort"
-          value={questionSort} onChange={handleSortChange}>
-          <option value="sort">Oldest</option>
-          <option value="desc">Newest</option>
-        </select>
+          <label>Sort by:</label>
+          <select
+            className="sort-posts"
+            value={questionSort} 
+            onChange={handleSortChange}>
+            <option value="sort">Oldest</option>
+            <option value="desc">Newest</option>
+          </select>
         </div>
-        
+
       </div>
       <div className="questions-container">
-      {
-  questionsToShow.length ?
-    questionsToShow.map(question => (
-      <Question
-        key={question.id}
-        data={question}
-        questionsToShow={questionsToShow} />
-    )) :
-    <p>Loading...</p>
-}
+        {
+          questionsToShow.length ?
+            questionsToShow.map(question => (
+              <Question
+                key={question.id}
+                data={question}
+                questionsToShow={questionsToShow} />
+            )) :
+            <div className="noquestions">Sorry, there aren't any questions to show.</div>
+        }
       </div>
     </>
   );

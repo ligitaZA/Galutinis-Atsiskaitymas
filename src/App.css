@@ -1,3 +1,15 @@
 @import url('./styles/header.css');
 @import url('./styles/questions.css');
 @import url('./styles/answer.css');
+@import url('./styles/footer.css');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Raleway:wght@100;500&display=swap');
+body {
+  margin: 0;
+  height: 100%;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}

@@ -1,18 +1,91 @@
 .answer{
-  border: 1px solid black;
-
+  border: 1px solid #a3a5a8;
+  padding: 10px;
 }
-
-
-.answerUser {
+.answerOwner {
   display: flex;
   align-items: center;
 }
+.answerUser {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  border-bottom: 1px solid #d5dada;
+}
+.answerUser .buttons {
+  display: flex;
+  gap: 10px;
+}
+.answerUser .buttons button{
+  font-family: 'Raleway';
+  text-decoration: none;
+  padding: 5px 10px;
+  background-color: #01949A;
+  color: #E5DDC8;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.answerUser .buttons button a {
+  text-decoration: none;
+  color: #E5DDC8;
+}
+.answerUser .buttons button:hover {
+  background-color: #87B1B0;
+}
+
 .answerUser img {
   height: 30px;
 }
 .likeddislikedAnswers {
   display: flex;
   gap: 20px;
-
+  padding: 10px;
+  border-top: 1px solid #d5dada;
+}
+.likedAnswer, .dislikedAnswer {
+  display: flex;
+  gap: 5px;
+}
+.question-and-answers {
+  padding-top: 100px;
+}
+.question-and-answers-laukas {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 80%;
+  border: 0 solid #E2E8F0;
+  box-shadow: 2px 4px 6px 2px rgba(0, 0, 0, 0.1), 2px 2px 4px 2px rgba(0, 0, 0, 0.06);
+  border-radius: 5px;
+  padding: 10px;
+}
+.questionInAnswers {
+  padding: 5px 10px;
+}
+.question-and-answers-laukas form  {
+  width: 100%;
+  display: flex;
+  height: 30px;
+}
+.question-and-answers-laukas form input{
+  width: 100%;
+  border: 1px solid #a3a5a8;
+}
+.question-and-answers-laukas form button {
+  font-family: 'Raleway';
+  text-decoration: none;
+  padding: 5px 10px;
+  background-color: #87b1b054;
+  color: #DB1F48;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+.questionInAnswers h2 {
+  text-align: left;
 }

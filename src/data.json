@@ -14,28 +14,57 @@
       "avatar": "https://cdn-icons-png.flaticon.com/512/5087/5087579.png",
       "id": 1675691867162,
       "level": "user"
+    },
+    {
+      "userName": "heloo",
+      "password": "123456789",
+      "passwordRepeat": "123456789",
+      "avatar": "https://cdn2.iconfinder.com/data/icons/essenstial-ultimate-ui/64/avatar-512.png",
+      "id": 1676213157602,
+      "level": "user",
+      "isBanned": false
     }
   ],
   "questions": [
     {
-      "title": "Take a Break",
-      "question": "Labas",
+      "title": "Crank Up the Music",
+      "question": "iygiyg",
       "isEdited": false,
-      "id": 1676148697099,
+      "id": 1676212630944,
       "userId": 1,
-      "likes": 1,
+      "likes": 2,
       "dislikes": 1,
-      "sortByTime": "2/11/2023, 10:51:37 PM"
+      "sortByTime": "2/12/2023, 4:37:10 PM"
     },
     {
-      "title": "w",
-      "question": "w",
+      "title": "Crank Up the Musica",
+      "question": "aaaaaaaaaaa",
       "isEdited": false,
-      "id": 1676187055761,
-      "userId": 1,
-      "likes": 1,
+      "id": 1676213071585,
+      "userId": 1675691867162,
+      "likes": 0,
+      "dislikes": 2,
+      "sortByTime": "2/12/2023, 4:44:31 PM"
+    },
+    {
+      "title": "a",
+      "question": "aaaaa",
+      "isEdited": false,
+      "id": 1676213165892,
+      "userId": 1676213157602,
+      "likes": 2,
       "dislikes": 1,
-      "sortByTime": "2/12/2023, 9:30:55 AM"
+      "sortByTime": "2/12/2023, 4:46:05 PM"
+    },
+    {
+      "title": "Crank Up the Music",
+      "question": "ccccccccc",
+      "isEdited": false,
+      "id": 1676215639361,
+      "userId": 1,
+      "likes": 0,
+      "dislikes": 0,
+      "sortByTime": "2/12/2023, 5:27:19 PM"
     }
   ],
   "answers": [
@@ -172,6 +201,60 @@
       "id": 1676146319474,
       "edited": false,
       "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "postId": "1676148697099",
+      "userId": 1,
+      "content": "labas",
+      "id": 1676199999410,
+      "edited": false,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "postId": "1676208422708",
+      "userId": 1,
+      "content": "bnsf",
+      "id": 1676209318868,
+      "edited": false,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "id": 1676210493273,
+      "postId": "1676210391128",
+      "userId": 1,
+      "edited": true,
+      "content": "jjjjjjjjjjjjeeeeeeeeeeec  hffffffffffffjjjjjjjjjj",
+      "likes": 1,
+      "dislikes": 3
+    },
+    {
+      "id": 1676211005303,
+      "postId": "1676210954633",
+      "userId": 1,
+      "edited": true,
+      "content": "kas tau gali atasakytlii",
+      "likes": 1,
+      "dislikes": 1
+    },
+    {
+      "id": 1676212075379,
+      "postId": "1676212065913",
+      "userId": 1,
+      "edited": false,
+      "content": "jjjjjjjjj",
+      "likes": 1,
+      "dislikes": 2
+    },
+    {
+      "postId": "1676212630944",
+      "userId": 1675691867162,
+      "content": "ssssssssssss",
+      "id": 1676213082071,
+      "edited": false,
+      "likes": 1,
       "dislikes": 0
     }
   ]

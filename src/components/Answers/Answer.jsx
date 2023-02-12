@@ -5,28 +5,25 @@ import QuestionContext from "../../context/QuestionContext";
 import { useParams } from "react-router-dom";
 
 const Answer = () => {
+
   const { id } = useParams();
 
   const [editingAnswerId, setEditingAnswerId] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [editedAnswer, setEditedAnswer] = useState('');
-
   const [questionAnswers, setQuestionAnswers] = useState([]);
-  const { users, loggedInUser } = useContext(UserContext);
+  const [userLikes, setUserLikes] = useState([]);
+  const [userDislikes, setUserDislikes] = useState([]);
+
   const { answers, setAnswers, addAnswer, deleteAnswer, likeAnswer, dislikeAnswer, editAnswer } = useContext(AnswerContext);
   const { questions } = useContext(QuestionContext)
-  const [userLikes, setUserLikes] = useState([]);
-   const [userDislikes, setUserDislikes] = useState([]);
+  const { users, loggedInUser } = useContext(UserContext);
 
   const selectedQuestion = questions.find(question => question.id.toString() === id);
 
   useEffect(() => {
     const questionAnswers = answers.filter(answer => answer.postId === id);
     setQuestionAnswers(questionAnswers);
-  }, [answers, id]);
-
-  useEffect(() => {
-    setQuestionAnswers(answers.filter(answer => answer.postId === id));
   }, [answers, id]);
 
   const handleSubmit = (e) => {
@@ -85,86 +82,89 @@ const Answer = () => {
 
   return (
     <>
-      <div>
-        <h2>{selectedQuestion.title}</h2>
-        <p>{selectedQuestion.question}</p>
-      </div>
-      <div className="post-answers">
-        {
-          questionAnswers.map(answer => {
-            const answerOwner = users.find(user => user.id === answer.userId);
-            return (
-              <div key={answer.id} className="answer">
-                <div className="answerUser">
-                  {
-                    answerOwner && (
-                      <img src={answerOwner.avatar} alt="user avatar" />)
-                  }
+      <div className="question-and-answers">
+        <div className="question-and-answers-laukas">
+          <div className="questionInAnswers">
+            <h2>{selectedQuestion.title}</h2>
+            <p>{selectedQuestion.question}</p>
+          </div>
+          <div className="post-answers">
+            {
+              questionAnswers.map(answer => {
+                const answerOwner = users.find(user => user.id === answer.userId);
+                return (
+                  <div key={answer.id} className="answer">
+                    <div className="answerUser">
+                      <div className="answerOwner">
+                        {
+                          answerOwner && (
+                            <img src={answerOwner.avatar} alt="user avatar" />)
+                        }
 
-                  <div className="name">
-                    {answerOwner && (<span>{answerOwner.userName}</span>)}
-                  </div>
-                  {
-                    loggedInUser && loggedInUser.id === answerOwner.id &&
-                    <>
-                      <div className="buttons">
-                        <button onClick={() => deleteAnswer(answer.id)}>Delete Answer</button>
-                        <button onClick={() => handleEdit(answer)}>Edit Answer</button>
+                        <div className="name">
+                          {answerOwner && (<span>{answerOwner.userName}</span>)}
+                        </div>
                       </div>
-                    </>
-                  }
-                </div>
-                <div className="edited">
-                  {answer.edited && <p>Edited</p>}
-                </div>
-                {
-                  isEditing && answer.id === editingAnswerId ? (
-                    <form onSubmit={(e) => handleUpdate(e)}>
-                      <input
-                        type="text"
-                        value={editedAnswer}
-                        onChange={(e) => setEditedAnswer(e.target.value)} />
-                      <button type="submit">Update</button>
-                    </form>
-                  ) : (
-                    <div className="content">
-                      <p>{answer.content}</p>
+                      {
+                        loggedInUser && loggedInUser.id === answerOwner.id &&
+                        <>
+                          <div className="buttons">
+                            <button onClick={() => deleteAnswer(answer.id)}>Delete Answer</button>
+                            <button onClick={() => handleEdit(answer)}>Edit Answer</button>
+                          </div>
+                        </>
+                      }
                     </div>
-                  )}
-                <div className="likeddislikedAnswers">
-                  <div className="likedAnswer">
+                    <div className="edited">
+                      {answer.edited && <p>Edited</p>}
+                    </div>
                     {
-                      loggedInUser && (
-                        <i className="fa fa-thumbs-o-up" onClick={() => handleLike(answer.id)}></i>
-                      )
-                    }
-                    <span>{answer.likes} likes</span>
-                  </div>
+                      isEditing && answer.id === editingAnswerId ? (
+                        <form onSubmit={(e) => handleUpdate(e)}>
+                          <input
+                            type="text"
+                            value={editedAnswer}
+                            onChange={(e) => setEditedAnswer(e.target.value)} />
+                          <button type="submit">Update</button>
+                        </form>
+                      ) : (
+                        <div className="content">
+                          <p>{answer.content}</p>
+                        </div>
+                      )}
+                    <div className="likeddislikedAnswers">
+                      <div className="likedAnswer">
+                        {
+                          loggedInUser && (
+                            <i className="fa fa-thumbs-o-up" onClick={() => handleLike(answer.id)}></i>
+                          )
+                        }
+                        <span>{answer.likes} likes</span>
+                      </div>
 
-                  <div className="dislikedAnswer">
-                    {
-                      loggedInUser && (
-                        <i className="fa fa-thumbs-o-down" onClick={() => handleDislike(answer.id)}></i>
-                      )
-                    }
-                    <span>{answer.dislikes} dislikes</span>
+                      <div className="dislikedAnswer">
+                        {
+                          loggedInUser && (
+                            <i className="fa fa-thumbs-o-down" onClick={() => handleDislike(answer.id)}></i>
+                          )
+                        }
+                        <span>{answer.dislikes} dislikes</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
+                )
+              })
+            }
+          </div>
+          {
+            loggedInUser && (
+              <form className="post-answer-form" onSubmit={handleSubmit}>
+                <input type="text" placeholder="Your answer" />
+                <button type="submit">Submit</button>
+              </form>
             )
-          })
-        }
-      </div>
-      {
-        loggedInUser && (
-
-          <form className="post-answer-form" onSubmit={handleSubmit}>
-            <input type="text" placeholder="Your answer" />
-            <button type="submit">Submit</button>
-          </form>
-        )
-      }
-
+          }
+        </div></div>
     </>
   );
 };

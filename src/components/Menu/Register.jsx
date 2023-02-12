@@ -22,9 +22,7 @@ const Register = () => {
       } else {
         let newUser = {
           ...values,
-          id: Date.now(),
-          level: 'user',
-          isBanned: false
+          id: Date.now()
         };
         const response = await fetch('http://localhost:5000/users', {
           method: 'POST',
@@ -60,8 +58,8 @@ const Register = () => {
   return (
     <>
       <div className="register">
-
-        {invalidUsername && <div className="error-message">This username is already taken, please choose a different one</div>}
+        <div className="register-form">
+          {invalidUsername && <div className="error-message">This username is already taken, please choose a different one</div>}
         <Formik
           validationSchema={validationSchema}
           onSubmit={(values, { setSubmitting, resetForm }) => handleSubmit(values, { setSubmitting, resetForm })}
@@ -110,6 +108,9 @@ const Register = () => {
             </Form>
           )}
         </Formik>
+        </div>
+
+        
       </div>
 
     </>

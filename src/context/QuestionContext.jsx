@@ -13,15 +13,14 @@ const QuestionProvider = ({ children }) => {
       try {
         const res = await fetch('http://localhost:5000/questions');
         const data = await res.json();
-        console.log(data);
         setQuestions(data);
+        setQuestionsToShow(data)
       } catch (error) {
         console.error('Error:', error);
       }
     };
     fetchMessages();
   }, []);
-
 
   const addQuestion = async (question) => {
       const res = await fetch('http://localhost:5000/questions', {
@@ -38,8 +37,9 @@ const QuestionProvider = ({ children }) => {
       await fetch(`http://localhost:5000/questions/${id}`, {
         method: 'DELETE',
       });
-      setQuestions(questions.filter(question => question.id !== id));
       setQuestionsToShow(questionsToShow.filter(question => question.id !== id));
+      setQuestions(questions.filter(question => question.id !== id));
+      
     };
 
   const editQuestion = async (id, updatedQuestion) => {
