@@ -31,8 +31,7 @@ const Register = () => {
           },
           body: JSON.stringify(newUser)
         });
-        const data = await response.json();
-        console.log(data);
+       await response.json();
         addNewUser(newUser);
         setLoggedInUser(newUser);
         navigate('/');
