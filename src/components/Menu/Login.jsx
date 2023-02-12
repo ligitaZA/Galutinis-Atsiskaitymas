@@ -29,7 +29,7 @@ const LogIn = () => {
   return (
     <>
       <div className="logIn">
-        <h2>Log in</h2>
+        <h2>Log</h2>
         <div className="loginForm">
           <Formik
           initialValues={{

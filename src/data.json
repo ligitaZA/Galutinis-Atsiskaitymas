@@ -27,34 +27,24 @@
   ],
   "questions": [
     {
-      "title": "Crank Up the Music",
-      "question": "iygiyg",
+      "title": "Loop inside React JSX",
+      "question": "I'm trying to do something like the following in React JSX (where ObjectRow is a separate component):  <tbody>     for (var i=0; i < numrows; i++) {         <ObjectRow/>     }  </tbody> I realize and understand why this isn't valid JSX, since JSX maps to function calls. However, coming from template land and being new to JSX, I am unsure how I would achieve the above (adding a component multiple times).",
       "isEdited": false,
-      "id": 1676212630944,
-      "userId": 1,
+      "id": 1676221086426,
+      "userId": 1676213157602,
       "likes": 2,
-      "dislikes": 2,
-      "sortByTime": "2/12/2023, 4:37:10 PM"
+      "dislikes": 1,
+      "sortByTime": "2/12/2023, 6:58:06 PM"
     },
     {
-      "title": "Crank Up the Musica",
-      "question": "aaaaaaaaaaa",
-      "isEdited": false,
-      "id": 1676213071585,
-      "userId": 1675691867162,
-      "likes": 0,
-      "dislikes": 2,
-      "sortByTime": "2/12/2023, 4:44:31 PM"
-    },
-    {
-      "title": "Crank Up the Music",
-      "question": "ccccccccc",
-      "isEdited": false,
-      "id": 1676215639361,
+      "title": "What are these three dots in React doing?",
+      "question": "What does the ... do in this React (usig JSX) code and what is it called?\n\n<Modal {...this.props} title='Modal heading' animation={false}>",
       "userId": 1,
+      "isEdited": true,
       "likes": 0,
       "dislikes": 1,
-      "sortByTime": "2/12/2023, 5:27:19 PM"
+      "sortByTime": "2/12/2023, 7:01:01 PM",
+      "id": 1676221261393
     }
   ],
   "answers": [
@@ -244,6 +234,33 @@
       "content": "ssssssssssss",
       "id": 1676213082071,
       "edited": false,
+      "likes": 1,
+      "dislikes": 1
+    },
+    {
+      "postId": "1676221086426",
+      "userId": 1676213157602,
+      "content": "Think of it like you're just calling JavaScript functions. You can't use a for loop where the arguments to a function call would go:  return tbody(     for (let i = 0; i < numrows; i++) {         ObjectRow()     }  ) See how the function tbody is being passed a for loop as an argument – leading to a syntax error.  But you can make an array, and then pass that in as an argument:  const rows = []; for (let i = 0; i < numrows; i++) {     rows.push(ObjectRow()); } return tbody(rows);",
+      "id": 1676221104947,
+      "edited": false,
+      "likes": 0,
+      "dislikes": 1
+    },
+    {
+      "id": 1676221183311,
+      "postId": "1676221086426",
+      "userId": 1,
+      "edited": true,
+      "content": "You might want to checkout React Templates, which does let you use JSX-style templates in React, with a few directives (such as rt-repeat).  Your example, if you used react-templates, would be:  <tbody>      <ObjectRow rt-repeat=\"obj in objects\"/> </tbody>",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "id": 1676222316353,
+      "postId": "1676221261393",
+      "userId": 1676213157602,
+      "edited": true,
+      "content": "xxxxxxxxxxxx",
       "likes": 1,
       "dislikes": 1
     }

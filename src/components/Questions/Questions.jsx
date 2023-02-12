@@ -49,7 +49,9 @@ const Questions = () => {
   return (
     <>
       <div className="filter-container">
-        <div className="buttons">
+        <h2>Web Development questions forum</h2>
+        <div className="lower">
+          <div className="buttons">
           <p>Filter questions:</p>
           <button onClick={answeredQuestions}>Answered</button>
           <button onClick={unansweredQuestions}>No Answer</button>
@@ -59,12 +61,14 @@ const Questions = () => {
           <label>Sort by:</label>
           <select
             className="sort-posts"
-            value={questionSort} 
+            value={questionSort}
             onChange={handleSortChange}>
             <option value="sort">Oldest</option>
             <option value="desc">Newest</option>
           </select>
         </div>
+        </div>
+        
 
       </div>
       <div className="questions-container">

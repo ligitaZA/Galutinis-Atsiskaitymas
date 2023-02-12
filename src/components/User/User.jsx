@@ -28,7 +28,6 @@ const User = () => {
             className="userAvatar"
           />
           <span>{loggedInUser.userName}</span>
-       
         <button className="logOut" onClick={() => logOutUser()}>Log Out</button>
         </div>
         
