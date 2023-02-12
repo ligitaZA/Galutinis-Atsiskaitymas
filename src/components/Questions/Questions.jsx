@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import AnswerContext from "../../context/AnswerContext";
 import QuestionContext from "../../context/QuestionContext";
 import Question from './Question';
@@ -7,6 +7,11 @@ const Questions = () => {
   const { questions, setQuestionsToShow, questionsToShow } = useContext(QuestionContext);
   const [questionSort, setQuestionSort] = useState("sort");
   const { answers } = useContext(AnswerContext)
+
+
+  useEffect(() => {
+    setQuestionsToShow(questions);
+  }, [questions, setQuestionsToShow]);
 
   const sortQuestions = () => {
     const sortedQuestions = [...questions].sort((a, b) => {
@@ -40,7 +45,7 @@ const Questions = () => {
   };
 
   const showAllQuestions = () => {
-    setQuestionsToShow(sortQuestions);
+    setQuestionsToShow(questions);
   };
 
   return (
@@ -64,16 +69,16 @@ const Questions = () => {
         
       </div>
       <div className="questions-container">
-        {
-          questionsToShow.length ?
-            questionsToShow.map(question => (
-              <Question
-                key={question.id}
-                data={question}
-                questionsToShow={questionsToShow} />
-            )) :
-            questionsToShow ? <p>Filter available questions</p> : <p>Loading...</p>
-        }
+      {
+  questionsToShow.length ?
+    questionsToShow.map(question => (
+      <Question
+        key={question.id}
+        data={question}
+        questionsToShow={questionsToShow} />
+    )) :
+    <p>Loading...</p>
+}
       </div>
     </>
   );
